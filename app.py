@@ -2,25 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# -----------------------------
-# Load Model
-# -----------------------------
-@st.cache_resource
+
 def load_model():
     model = joblib.load("model.pkl")
     return model
 
 model = load_model()
 
-# -----------------------------
-# App Title
-# -----------------------------
+
 st.title("🚗 Vehicle Fuel Efficiency Prediction App")
 st.write("Predict MPG (Miles Per Gallon) of a vehicle")
 
-# -----------------------------
-# User Inputs
-# -----------------------------
+
 cylinders = st.number_input("Cylinders", min_value=1, step=1)
 displacement = st.number_input("Displacement", min_value=0.0)
 horsepower = st.number_input("Horsepower", min_value=0)
@@ -29,9 +22,7 @@ acceleration = st.number_input("Acceleration", min_value=0.0)
 model_year = st.number_input("Model Year", min_value=1900, step=1)
 origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
 
-# -----------------------------
-# Prediction
-# -----------------------------
+
 if st.button("Predict MPG"):
 
     input_data = pd.DataFrame({
