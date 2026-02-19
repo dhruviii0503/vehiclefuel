@@ -2,13 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-
-def load_model():
-   model = joblib.load("vehicle_fuel_efficency_model (3).pkl")
-
-    return model
-
-model = load_model()
+model = joblib.load("vehicle_fuel_efficency_model (3).pkl")
 
 
 st.title("🚗 Vehicle Fuel Efficiency Prediction App")
