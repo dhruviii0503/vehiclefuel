@@ -21,7 +21,7 @@ weight = st.number_input("Weight", min_value=0)
 acceleration = st.number_input("Acceleration", min_value=0.0)
 model_year = st.number_input("Model Year", min_value=1900, step=1)
 origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
-car_name = st.number_input("Car Name (Encoded Number)", min_value=0)
+car name = st.number_input("Car Name (Encoded Number)", min_value=0)
 
 
 input_df = pd.DataFrame({
@@ -30,14 +30,14 @@ input_df = pd.DataFrame({
         "horsepower": [horsepower],
         "weight": [weight],
         "acceleration": [acceleration],
-        "model_year": [model_year],
+        "model year": [model year],
         "origin": [origin],
-        "car_name": [car_name]
+        "car name": [car name]
 })
 
 
 try:
-    categorical_cols = ["car_name", "model_year", "acceleratio"]
+    categorical_cols = ["car name", "model year", "acceleration"]
 
     for col in categorical_cols:
         input_df[col] = encoder[col].transform(input_df[col])
