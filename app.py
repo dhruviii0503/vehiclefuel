@@ -17,10 +17,7 @@ acceleration = st.number_input("Acceleration", min_value=0.0)
 model_year = st.number_input("Model Year", min_value=1900, step=1)
 origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
 
-
-if st.button("Predict MPG"):
-
-    input_data = pd.DataFrame({
+input_data = pd.DataFrame({
         "cylinders": [cylinders],
         "displacement": [displacement],
         "horsepower": [horsepower],
@@ -30,8 +27,9 @@ if st.button("Predict MPG"):
         "origin": [origin]
     })
 
-    prediction = model.predict(input_data)
 
+if st.button("Predict MPG"):
+    prediction = model.predict(input_data)
     st.success(f"Predicted MPG: {prediction[0]:.2f}")
 
 
