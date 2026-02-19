@@ -32,8 +32,8 @@ input_df = pd.DataFrame({
 })
 
 
-for col in encoders:
-    input_df[col] = encoders[col].transform(input_df[col])
+for col in encoder:
+    input_df[col] = encoder[col].transform(input_df[col])
 
 if st.button("Predict Fuel Efficiency"):
     prediction = model.predict(input_df)
