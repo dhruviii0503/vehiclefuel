@@ -4,7 +4,7 @@ import joblib
 
 
 try:
-    model = joblib.load("vehicle_fuel_efficency_model(1).pkl")
+    model = joblib.load("model.pkl")
     encoder = joblib.load("label_encoder(6).pkl")
 except Exception as e:
     st.error(f"Error loading model files: {e}")
