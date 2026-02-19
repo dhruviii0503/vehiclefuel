@@ -26,6 +26,7 @@ input_data = pd.DataFrame({
         "model year": [model_year],
         "origin": [origin]
     })
+input_data = input_data[model.feature_names_in_]
 
 
 if st.button("Predict MPG"):
