@@ -4,7 +4,8 @@ import joblib
 
 
 def load_model():
-    model = joblib.load("model.pkl")
+   model = joblib.load("vehicle_fuel_efficency_model (3).pkl")
+
     return model
 
 model = load_model()
