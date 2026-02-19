@@ -3,12 +3,8 @@ import pandas as pd
 import joblib
 
 
-try:
-    model = joblib.load("vehicle_fuel_efficency_model (3).pkl")
-    encoder = joblib.load("label_encoder (7).pkl")
-except Exception as e:
-    st.error(f"Error loading model files: {e}")
-    st.stop()
+
+model = joblib.load("vehicle_fuel_efficency_model (3).pkl")
 
 
 st.title("Vehicle Fuel Efficiency Prediction App")
@@ -21,7 +17,6 @@ weight = st.number_input("Weight", min_value=0)
 acceleration = st.number_input("Acceleration", min_value=0.0)
 model_year = st.number_input("Model Year", min_value=1900, step=1)
 origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
-car_name = st.number_input("Car Name (Encoded Number)", min_value=0)
 
 
 input_df = pd.DataFrame({
@@ -32,7 +27,6 @@ input_df = pd.DataFrame({
         "acceleration": [acceleration],
         "model year": [model_year],
         "origin": [origin],
-        "car name": [car_name]
 })
 
 
