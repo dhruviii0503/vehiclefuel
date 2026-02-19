@@ -11,8 +11,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("vehicle_fuel_efficency_model (1).pkl")
-encoder = joblib.load("label_encoder (1).pkl")
+model = joblib.load("vehicle_fuel_efficency_model (2).pkl")
+encoder = joblib.load("label_encoder (5).pkl")
 
 st.title("vehicle fuel efficency app")
 
