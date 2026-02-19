@@ -14,20 +14,25 @@ except Exception as e:
 st.title("Vehicle Fuel Efficiency Prediction App")
 
 
-engine_size = st.number_input("Engine Size", min_value=0.0, step=0.1)
 cylinders = st.number_input("Cylinders", min_value=1, step=1)
-
-transmission = st.selectbox("Transmission", ["Automatic", "Manual"])
-fuel_type = st.selectbox("Fuel Type", ["Petrol", "Diesel", "CNG", "Electric"])
-vehicle_class = st.selectbox("Vehicle Class", ["SUV", "Sedan", "Hatchback", "Truck"])
+displacement = st.number_input("Displacement", min_value=0.0)
+horsepower = st.number_input("Horsepower", min_value=0)
+weight = st.number_input("Weight", min_value=0)
+acceleration = st.number_input("Acceleration", min_value=0.0)
+model_year = st.number_input("Model Year", min_value=1900, step=1)
+origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
+car_name = st.number_input("Car Name (Encoded Number)", min_value=0)
 
 
 input_df = pd.DataFrame({
-    "engine_size": [engine_size],
     "cylinders": [cylinders],
-    "transmission": [transmission],
-    "fuel_type": [fuel_type],
-    "vehicle_class": [vehicle_class]
+        "displacement": [displacement],
+        "horsepower": [horsepower],
+        "weight": [weight],
+        "acceleration": [acceleration],
+        "model year": [model_year],
+        "origin": [origin],
+        "car name": [car_name]
 })
 
 
