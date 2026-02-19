@@ -30,14 +30,14 @@ input_df = pd.DataFrame({
         "horsepower": [horsepower],
         "weight": [weight],
         "acceleration": [acceleration],
-        "model year": [model_year],
+        "model_year": [model_year],
         "origin": [origin],
-        "car name": [car_name]
+        "car_name": [car_name]
 })
 
 
 try:
-    categorical_cols = ["transmission", "fuel_type", "vehicle_class"]
+    categorical_cols = ["car_name", "model_year", "acceleratio"]
 
     for col in categorical_cols:
         input_df[col] = encoder[col].transform(input_df[col])
