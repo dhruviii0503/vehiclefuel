@@ -9,13 +9,13 @@ st.title("🚗 Vehicle Fuel Efficiency Prediction App")
 st.write("Predict MPG (Miles Per Gallon) of a vehicle")
 
 
-cylinders = st.number_input("Cylinders", min_value=1, step=1)
-displacement = st.number_input("Displacement", min_value=0.0)
-horsepower = st.number_input("Horsepower", min_value=0)
-weight = st.number_input("Weight", min_value=0)
-acceleration = st.number_input("Acceleration", min_value=0.0)
-model_year = st.number_input("Model Year", min_value=1900, step=1)
-origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
+cylinders = st.number_input("cylinders", min_value=1, step=1)
+displacement = st.number_input("displacement", min_value=0.0)
+horsepower = st.number_input("horsepower", min_value=0)
+weight = st.number_input("weight", min_value=0)
+acceleration = st.number_input("acceleration", min_value=0.0)
+model_year = st.number_input("model Year", min_value=1900, step=1)
+origin = st.number_input("origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
 
 input_data = pd.DataFrame({
         "cylinders": [cylinders],
