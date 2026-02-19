@@ -21,7 +21,7 @@ weight = st.number_input("Weight", min_value=0)
 acceleration = st.number_input("Acceleration", min_value=0.0)
 model_year = st.number_input("Model Year", min_value=1900, step=1)
 origin = st.number_input("Origin (1=USA, 2=Europe, 3=Japan)", min_value=1, max_value=3, step=1)
-car name = st.number_input("Car Name (Encoded Number)", min_value=0)
+car_name = st.number_input("Car Name (Encoded Number)", min_value=0)
 
 
 input_df = pd.DataFrame({
@@ -30,9 +30,9 @@ input_df = pd.DataFrame({
         "horsepower": [horsepower],
         "weight": [weight],
         "acceleration": [acceleration],
-        "model year": [model year],
+        "model year": [model_year],
         "origin": [origin],
-        "car name": [car name]
+        "car name": [car_name]
 })
 
 
